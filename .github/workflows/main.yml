@@ -21,6 +21,10 @@ jobs:
                https://api.trakt.tv/users/adityazu/history/movie \
                -o history-watch.json
 
+      - name: Debug JSON Content
+        run: |
+          cat history-watch.json 
+
       - name: Install rclone
         run: |
           curl https://rclone.org/install.sh | sudo bash
