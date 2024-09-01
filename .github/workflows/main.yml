@@ -31,4 +31,4 @@ jobs:
 
       - name: Upload JSON to Cloud Storage
         run: |
-          rclone copy history-watch.json ab:Arc.BiHU.0x/0x/Website Dump/Document Dump/GH Trakt History/ --config rclone.conf
+          rclone copy history-watch.json ab:Arc.BiHU.0x/0x/0x/JSON --config rclone.conf
