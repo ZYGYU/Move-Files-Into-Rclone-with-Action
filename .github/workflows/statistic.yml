@@ -18,7 +18,7 @@ jobs:
           curl -H "Content-Type: application/json" \
                -H "trakt-api-version: 2" \
                -H "trakt-api-key: ${{ secrets.TRAKT_API_KEY }}" \
-               https://api.trakt.tv/users/sean/stats \
+               https://api.trakt.tv/users/adityazu/stats \
                -o statistics.json
 
       - name: Debug JSON Content
