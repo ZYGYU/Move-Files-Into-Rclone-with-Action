@@ -19,6 +19,7 @@ jobs:
                -H "trakt-api-version: 2" \
                -H "trakt-api-key: ${{ secrets.TRAKT_API_KEY }}" \
                https://api.trakt.tv/users/adityazu/history/movie \
+               -o history-watch.json
 
       - name: Debug JSON Content
         run: |
