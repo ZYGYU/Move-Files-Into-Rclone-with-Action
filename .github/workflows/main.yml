@@ -18,8 +18,7 @@ jobs:
           curl -H "Content-Type: application/json" \
                -H "trakt-api-version: 2" \
                -H "trakt-api-key: ${{ secrets.TRAKT_API_KEY }}" \
-               https://api.trakt.tv/users/adityazu/history/movies/start_at=2024-01-01T00%3A00%3A00.000Z \
-               -o history-watch.json
+               https://api.trakt.tv/users/adityazu/history/movie \
 
       - name: Debug JSON Content
         run: |
