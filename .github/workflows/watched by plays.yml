@@ -35,4 +35,4 @@ jobs:
 
       - name: Upload JSON to Cloud Storage
         run: |
-          rclone copy statistics.json ab:Arc.BiHU.0x/0x/0x/JSON --config rclone.conf
+          rclone copy watched.json ab:Arc.BiHU.0x/0x/0x/JSON --config rclone.conf
