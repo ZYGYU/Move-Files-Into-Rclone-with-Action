@@ -15,11 +15,11 @@ jobs:
     steps:
       - name: Fetch JSON with Curl
         run: |
-          curl -s https://spitiditya.tumblr.com/rss > tumblr.json
+          curl -s https://spitiditya.tumblr.com/rss > tumblr.xml
                
       - name: Debug JSON Content
         run: |
-          cat tumblr.json 
+          cat tumblr.xml
 
       - name: Install rclone
         run: |
@@ -31,4 +31,4 @@ jobs:
 
       - name: Upload JSON to Cloud Storage
         run: |
-          rclone copy tumblr.json ab:Arc.BiHU.0x/0x/0x/JSON --config rclone.conf
+          rclone copy tumblr.xml ab:Arc.BiHU.0x/0x/0x/XML --config rclone.conf
