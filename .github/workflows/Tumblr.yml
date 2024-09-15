@@ -16,8 +16,7 @@ jobs:
       - name: Fetch JSON with Curl
         run: |
           curl -s https://spitiditya.tumblr.com/rss > tumblr.json
-               -o tumblr.json
-
+               
       - name: Debug JSON Content
         run: |
           cat tumblr.json 
