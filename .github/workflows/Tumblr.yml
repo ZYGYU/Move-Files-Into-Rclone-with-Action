@@ -1,0 +1,35 @@
+name: Tumblr Successfully ✅
+
+on:
+ schedule:
+    - cron: "*/5 * * * *"
+ workflow_dispatch:
+ push:
+    branches:
+      - master
+
+jobs:
+  fetch_and_upload:
+    runs-on: ubuntu-latest
+    name: Fetch JSON and Upload via rclone
+    steps:
+      - name: Fetch JSON with Curl
+        run: |
+          curl https://spitiditya.tumblr.com/rss
+               -o tumblr.json
+
+      - name: Debug JSON Content
+        run: |
+          cat tumblr.json 
+
+      - name: Install rclone
+        run: |
+          curl https://rclone.org/install.sh | sudo bash
+
+      - name: Configure Rclone
+        run: |
+          echo '${{ secrets.RCLONE_CONFIG }}' > rclone.conf
+
+      - name: Upload JSON to Cloud Storage
+        run: |
+          rclone copy tumblr.json ab:Arc.BiHU.0x/0x/0x/JSON --config rclone.conf
