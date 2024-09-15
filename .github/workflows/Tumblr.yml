@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Fetch JSON with Curl
         run: |
-          curl https://spitiditya.tumblr.com/rss
+          curl -s https://spitiditya.tumblr.com/rss > tumblr.json
                -o tumblr.json
 
       - name: Debug JSON Content
